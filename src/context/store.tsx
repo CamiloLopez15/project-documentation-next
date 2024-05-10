@@ -6,6 +6,7 @@ import {
     Dispatch,
     SetStateAction,
     useState,
+    useEffect,
 } from "react";
 import React from "react";
 
@@ -19,8 +20,26 @@ const GlobalContext = createContext<ContextProps>({
     setTheme: (): string => "",
 });
 
-export const GlobalContextProvider = ({ children }) => {
-    const [theme, setTheme] = useState("");
+export const GlobalContextProvider = ({
+    children,
+}: Readonly<{
+    children: React.ReactNode;
+}>) => {
+    const [theme, setTheme] = useState(localStorage.getItem("theme") as string);
+
+    useEffect(() => {
+        if (localStorage.getItem("theme") == 'light') {
+            setTheme(localStorage.getItem("theme") as string);
+        } else setTheme("dark");
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        const body = document.querySelector("body");
+        if (theme == "light") body?.classList.remove("dark");
+        else body?.classList.add("dark");
+    }, [theme]);
+
     return (
         <GlobalContext.Provider value={{ theme, setTheme }}>
             {children}

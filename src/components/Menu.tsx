@@ -5,30 +5,25 @@ import { LiaLinkedinIn, LiaGithub } from "react-icons/lia";
 import { TbWorld, TbMoonFilled, TbMenu2 } from "react-icons/tb";
 import { CgClose } from "react-icons/cg";
 import { useState, useEffect } from "react";
+import { useGlobalContext } from '@/context/store';
+
 export default function Menu() {
     //Variables
     const [showResponsiveMenu, setShowResponsiveMenu] = useState(false);
+    const { theme, setTheme } = useGlobalContext();
     const classLiIcon =
         "flex justify-center items-center text-lg rounded-full p-1 border border-black dark:border-primary-dark-gray hover:dark:border-primary-dark-orange hover:border-primary-light-blue hover:dark:text-primary-dark-orange hover:text-primary-light-blue transition transition-colors duration-200";
     const classLiA =
         "dark:text-primary-dark-gray text-black hover:dark:text-primary-dark-orange hover:text-primary-light-blue transition transition-colors duration-200 flex justify-center items-center";
-
     //UseEffects and life hooks
-    useEffect(() => {
-        const currentTheme = localStorage.getItem("theme");
-        if (currentTheme == "light") document.body.classList.remove("dark");
-        else document.body.classList.add("dark");
-    }, []);
 
     //Métodos
     const handleClickResponsiveMenu = () => {
         setShowResponsiveMenu(!showResponsiveMenu);
     };
     const handleClickTheme = () => {
-        const body = document.querySelector("body");
-        body?.classList.toggle("dark");
-        if(localStorage.getItem("theme") == 'dark') localStorage.setItem('theme', 'light');
-        else localStorage.setItem('theme', 'dark')
+        if(theme == 'dark') setTheme('light');
+        else setTheme('dark')
     };
 
     return (

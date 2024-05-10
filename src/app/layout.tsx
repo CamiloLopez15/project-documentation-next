@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Keania_One } from "next/font/google";
+import { GlobalContextProvider } from "@/context/store";
 import Menu from "@/components/Menu";
 import "./globals.css";
 
@@ -20,10 +21,12 @@ export default function RootLayout({
             <body
                 className={`${inter.className} antialiased dark min-h-screen w-[100vw] h-[100vh] min-w-full overflow-x-hidden transition-colors duration-500 `}
             >
-                <div className="dark:bg-black bg-white dark:text-primary-dark-gray text-black flex flex-col min-h-screen min-w-full">
-                    <Menu />
-                    {children}
-                </div>
+                <GlobalContextProvider>
+                    <div className="dark:bg-black bg-white dark:text-primary-dark-gray text-black flex flex-col min-h-screen min-w-full">
+                        <Menu />
+                        {children}
+                    </div>
+                </GlobalContextProvider>
             </body>
         </html>
     );
