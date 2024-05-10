@@ -25,7 +25,7 @@ export const GlobalContextProvider = ({
 }: Readonly<{
     children: React.ReactNode;
 }>) => {
-    const [theme, setTheme] = useState(localStorage.getItem("theme") as string);
+    const [theme, setTheme] = useState("");
 
     useEffect(() => {
         if (localStorage.getItem("theme") == 'light') {
