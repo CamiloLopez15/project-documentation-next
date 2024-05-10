@@ -18,7 +18,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter.className} antialiased dark min-h-screen min-w-full overflow-x-hidden transition-colors duration-500 `}
+                className={`${inter.className} antialiased dark min-h-screen w-[100vw] h-[100vh] min-w-full overflow-x-hidden transition-colors duration-500 `}
             >
                 <div className="dark:bg-black bg-white dark:text-primary-dark-gray text-black flex flex-col min-h-screen min-w-full">
                     <Menu />
