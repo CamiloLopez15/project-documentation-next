@@ -33,7 +33,7 @@ export default function Home() {
                     Proyectos
                 </h1>
                 <div className="flex flex-col justify-start items-start w-[100vw] px-48 h-auto dark:bg-black bg-white pb-10">
-                    <Articles title="Blog" description="Esto es un blog 4k 60 fps" date={new Date()} hour="4:28" technologies={['JavaScript', 'HTML']}/>
+                    <Articles title="Blog" description="Esto es un blog 4k 60 fps" date={new Date()} hour="4:28" technologies={['JS', 'HTML', 'REACT']}/>
                 </div>
             </section>
         </main>
