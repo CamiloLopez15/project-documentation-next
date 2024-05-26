@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Keania_One } from "next/font/google";
 import { GlobalContextProvider } from "@/context/store";
-import Menu from "@/components/Menu";
-import "./globals.css";
+import {Menu} from "@/components";
+import "@/css/globals.css";
 
 const inter = Keania_One({ weight: "400", subsets: ["latin"] });
 
@@ -17,7 +17,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="es">
             <body
                 className={`${inter.className} antialiased dark min-h-screen w-[100vw] h-[100vh] min-w-full overflow-x-hidden transition-colors duration-500 `}
             >
