@@ -2,30 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body, html {
-    height: 100vh;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+* {
+    box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+    width: 100% !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    @apply bg-black/90;
+}
 body::-webkit-scrollbar {
-  width: 6px;               /* width of the entire scrollbar */
+    width: 6px; /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: transparent;        /* color of the tracking area */
+    background: transparent; /* color of the tracking area */
 }
 
 .dark::-webkit-scrollbar-track {
-  background: #000;        /* color of the tracking area */
+    background: #000; /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(51 154 240);
+    background-color: rgb(51 154 240);
 }
 
 .dark::-webkit-scrollbar-thumb {
-  background-color: rgb(252 163 17);
+    background-color: rgb(252 163 17);
 }

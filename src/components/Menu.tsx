@@ -27,8 +27,8 @@ export default function Menu() {
     };
 
     return (
-        <header>
-            <nav className="hidden lg:flex justify-evenly w-full h-16 relative dark:bg-white/10 bg-black/10 z-20">
+        <nav>
+            <div className="hidden lg:flex justify-evenly w-full h-16 relative  bg-black z-20">
                 {/* <LanguageSelector /> */}
                 <a
                     href="/"
@@ -76,15 +76,15 @@ export default function Menu() {
                             <TbWorld />
                         </a>
                     </li>
-                    <li className={classLiIcon}>
+                    {/* <li className={classLiIcon}>
                         <button onClick={handleClickTheme}>
                             <TbMoonFilled />
                         </button>
-                    </li>
+                    </li> */}
                 </ul>
-            </nav>
+            </div>
 
-            <nav className="flex lg:hidden justify-evenly w-full h-16 relative dark:bg-white/10 bg-black/10">
+            <div className="flex lg:hidden justify-evenly w-full h-16 relative bg-black">
                 <div className="flex justify-between items-center w-full px-4">
                     <a
                         href="/"
@@ -149,14 +149,14 @@ export default function Menu() {
                                 <TbWorld />
                             </a>
                         </li>
-                        <li className={classLiIcon}>
+                        {/* <li className={classLiIcon}>
                             <button onClick={handleClickTheme}>
                                 <TbMoonFilled />
                             </button>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
     );
 }
